@@ -119,7 +119,7 @@ class _MoodEntryFormPageState extends State<MoodEntryFormPage> {
                         // here
                         child: ElevatedButton(
                           style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all(
+                            backgroundColor: WidgetStateProperty.all(
                                 Theme.of(context).colorScheme.primary),
                           ),
                           onPressed: () async {
@@ -151,33 +151,6 @@ class _MoodEntryFormPageState extends State<MoodEntryFormPage> {
                                       ));
                                   }
                               }
-                              showDialog(
-                                context: context,
-                                builder: (context) {
-                                  return AlertDialog(
-                                    title: const Text('Mood berhasil tersimpan'),
-                                    content: SingleChildScrollView(
-                                      child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: [
-                                          Text('Mood: $_mood'),
-                                          Text('Feelings: $_feelings'),
-                                          Text('Mood Intensity: $_moodIntensity'),
-                                        ],
-                                      ),
-                                    ),
-                                    actions: [
-                                      TextButton(
-                                        child: const Text('OK'),
-                                        onPressed: () {
-                                          Navigator.pop(context);
-                                          _formKey.currentState!.reset();
-                                        },
-                                      ),
-                                    ],
-                                  );
-                                },
-                              );
                             }
                           },
                           child: const Text(
